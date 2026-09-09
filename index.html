@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Подтянутый живот · поддержка курса</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="topbar-row">
+      <div class="brand">
+        <div class="t">Подтянутый живот</div>
+        <div class="s">чат поддержки</div>
+      </div>
+      <button class="icon-btn" id="searchbtn" aria-label="поиск"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+    <div class="searchwrap" id="searchwrap" hidden>
+      <input class="search" id="search" type="search" placeholder="дыхание, домик, тазовое дно…" autocomplete="off">
+    </div>
+  </header>
+
+  <main id="screen"></main>
+
+  <div class="foot">Evgesha Yoga</div>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

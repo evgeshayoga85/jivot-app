@@ -1,0 +1,205 @@
+/* Evgesha Yoga · мини-приложение поддержки курса
+   Дизайн-система сайта: Bebas Neue + Nunito, пудрово-розовая палитра, 8px-шкала отступов */
+
+:root{
+  --pink:#F2CED2;
+  --rose:#AF6F78;
+  --deep:#E89DA4;
+  --text:#424242;
+  --head:#5E656E;
+  --muted:#AFB8C4;
+  --wash-pink:#FFF8F8;
+  --wash-blue:#F4F7FB;
+  --footer:#454352;
+  --bg:#FFFFFF;
+
+  --s1:8px; --s2:16px; --s3:24px; --s4:32px; --s5:40px; --s6:48px;
+  --r-card:24px; --r-tag:10px;
+  --shadow:0 12px 32px -14px rgba(94,101,110,.20), 0 3px 10px -4px rgba(94,101,110,.10);
+  --shadow-rose:0 12px 32px -14px rgba(175,111,120,.45), 0 3px 10px -4px rgba(175,111,120,.25);
+  --focus:0 0 0 .4em rgba(175,111,120,.25);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:"Nunito",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4,.display{
+  font-family:"Bebas Neue","Nunito",sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+  color:var(--head);
+  font-weight:700;
+  line-height:1.2;
+  margin:0;
+}
+h1{font-size:40px}
+h2{font-size:32px}
+h3{font-size:28.8px}
+h4{font-size:24px}
+a{color:var(--rose);text-decoration:none}
+button{font-family:inherit}
+:focus-visible{outline:none;box-shadow:var(--focus);border-radius:var(--r-tag)}
+
+.app{max-width:560px;margin:0 auto;padding:0 var(--s2) var(--s6)}
+
+/* Шапка */
+.topbar{
+  position:sticky;top:0;z-index:20;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(8px);
+  padding:var(--s2) 0 var(--s1);
+  margin-bottom:var(--s1);
+}
+.topbar-row{display:flex;align-items:center;gap:var(--s2)}
+.brand{flex:1;min-width:0}
+.brand .t{font-family:"Bebas Neue",sans-serif;text-transform:uppercase;letter-spacing:.05em;font-size:24px;color:var(--head);line-height:1.1}
+.brand .s{font-size:13px;color:var(--head);opacity:.75}
+.icon-btn{
+  width:40px;height:40px;flex:0 0 40px;border:none;border-radius:50%;
+  background:var(--wash-pink);color:var(--rose);font-size:16px;cursor:pointer;
+  transition:background .3s ease;
+}
+.icon-btn:hover{background:var(--pink)}
+.searchwrap{margin-top:var(--s2)}
+.searchwrap[hidden]{display:none !important}
+.search{
+  width:100%;padding:12px var(--s2);border:1px solid var(--pink);
+  border-radius:var(--r-tag);font-size:16px;color:var(--text);background:var(--wash-pink);
+}
+.search::placeholder{color:var(--muted)}
+.search:focus{outline:none;box-shadow:var(--focus);border-color:var(--rose)}
+
+/* Общая прослойка */
+.lede{color:var(--head);font-size:15px;margin:0 0 var(--s3)}
+.section-title{margin:var(--s5) 0 var(--s2)}
+
+.links{display:flex;gap:var(--s1);flex-wrap:wrap;margin:calc(var(--s3) * -1 + var(--s1)) 0 var(--s3)}
+.linkbtn{
+  font-size:13px;font-weight:700;color:var(--head);background:var(--pink);
+  border-radius:var(--r-tag);padding:8px 14px;transition:background .3s ease
+}
+.linkbtn:hover{background:var(--deep)}
+.linkbtn.is-quiet{background:var(--wash-blue)}
+
+/* Карта уровней */
+.map{display:flex;flex-direction:column;gap:var(--s2);position:relative}
+.branch-label{
+  font-size:12px;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--head);opacity:.7;padding-left:var(--s3);margin-bottom:calc(var(--s1)*-1)
+}
+.level{
+  display:block;width:100%;text-align:left;cursor:pointer;
+  background:#fff;border:none;border-radius:var(--r-card);
+  padding:var(--s3);box-shadow:var(--shadow);
+  transition:transform 250ms ease, box-shadow 250ms ease;
+}
+.level:hover{transform:translateY(-2px);box-shadow:var(--shadow-rose)}
+.level.is-branch{margin-left:var(--s3);background:var(--wash-pink)}
+.level.is-optional{background:var(--wash-blue)}
+.level.is-bonus{background:var(--wash-pink)}
+.level-top{display:flex;align-items:baseline;gap:var(--s2)}
+.level-id{
+  font-family:"Bebas Neue",sans-serif;font-size:28.8px;letter-spacing:.05em;
+  color:var(--rose);flex:0 0 auto;line-height:1
+}
+.level-name{font-family:"Bebas Neue",sans-serif;text-transform:uppercase;letter-spacing:.05em;font-size:24px;color:var(--head);line-height:1.1}
+.level-tagline{font-size:14px;color:var(--text);margin-top:var(--s1)}
+.tags{display:flex;flex-wrap:wrap;gap:var(--s1);margin-top:var(--s2)}
+.tag{
+  font-size:12px;letter-spacing:.02em;color:var(--head);
+  background:var(--pink);border-radius:var(--r-tag);padding:4px 10px;
+}
+.tag.is-quiet{background:var(--wash-blue);color:var(--head)}
+.bar{height:6px;border-radius:99px;background:var(--wash-blue);margin-top:var(--s2);overflow:hidden}
+.bar > i{display:block;height:100%;background:var(--pink);border-radius:99px;transition:width .3s ease}
+.bar-note{font-size:12px;color:var(--head);opacity:.75;margin-top:6px}
+.connector{height:var(--s2);width:2px;background:var(--pink);margin:0 auto}
+
+/* Экран уровня */
+.back{
+  border:none;background:none;color:var(--rose);font-size:14px;cursor:pointer;
+  padding:var(--s1) 0;margin-bottom:var(--s1)
+}
+.level-head{margin-bottom:var(--s3)}
+.level-head .level-id{font-size:40px;display:block;margin-bottom:4px}
+.items{display:flex;flex-direction:column;gap:var(--s1);list-style:none;padding:0;margin:0}
+.item{
+  display:flex;gap:var(--s2);align-items:flex-start;
+  background:#fff;border-radius:var(--r-card);padding:var(--s2);box-shadow:var(--shadow);
+  transition:box-shadow 250ms ease;
+}
+.item.is-done{background:var(--wash-pink)}
+.item.is-pin{background:var(--pink)}
+.item.is-pin .type{background:#fff}
+.pin-note{
+  font-size:11px;text-transform:uppercase;letter-spacing:.04em;
+  color:var(--head);margin-bottom:2px
+}
+.check{
+  flex:0 0 24px;width:24px;height:24px;margin-top:2px;
+  border:2px solid var(--pink);border-radius:50%;background:#fff;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .3s ease,border-color .3s ease;padding:0
+}
+.check::after{
+  content:"";width:9px;height:5px;margin-top:-3px;
+  border-left:2px solid var(--head);border-bottom:2px solid var(--head);
+  transform:rotate(-45deg);opacity:0;transition:opacity .3s ease
+}
+.item.is-done .check{background:var(--pink);border-color:var(--pink)}
+.item.is-done .check::after,.checkrow.is-on .check::after{opacity:1}
+.item-body{flex:1;min-width:0}
+.item-title{font-weight:700;color:var(--head);font-size:15px}
+.item.is-done .item-title{opacity:.6}
+.item-note{font-size:13px;color:var(--text);opacity:.85;margin-top:2px}
+.item-meta{display:flex;align-items:center;gap:var(--s1);margin-top:var(--s1);flex-wrap:wrap}
+.type{
+  font-size:11px;text-transform:uppercase;letter-spacing:.04em;
+  color:var(--head);background:var(--wash-blue);border-radius:var(--r-tag);padding:3px 8px;
+  display:inline-flex;align-items:center;gap:6px
+}
+.type i{color:var(--rose)}
+.open{font-size:13px;color:var(--rose);font-weight:700}
+.open.is-off{color:var(--muted);font-weight:400}
+
+/* Тест перехода */
+.gate{
+  margin-top:var(--s4);background:var(--wash-pink);
+  border-radius:var(--r-card);padding:var(--s3);box-shadow:var(--shadow)
+}
+.gate h4{margin-bottom:var(--s1)}
+.gate p{font-size:14px;margin:0 0 var(--s2)}
+.checks{list-style:none;padding:0;margin:0 0 var(--s2);display:flex;flex-direction:column;gap:var(--s1)}
+.checkrow{display:flex;gap:var(--s2);align-items:flex-start;font-size:14px;cursor:pointer}
+.checkrow .check{flex:0 0 22px;width:22px;height:22px;background:#fff}
+.checkrow.is-on .check{background:var(--pink);border-color:var(--pink)}
+.crit{font-size:11px;color:var(--head);opacity:.7}
+.btn{
+  display:inline-block;border:none;cursor:pointer;
+  background:var(--pink);color:var(--head);
+  font-family:"Bebas Neue",sans-serif;text-transform:uppercase;letter-spacing:.05em;
+  font-size:20.8px;padding:10px var(--s3);border-radius:4px;
+  transition:background .3s ease
+}
+.btn:hover{background:var(--deep)}
+.verdict{margin-top:var(--s2);padding:var(--s2);border-radius:var(--r-tag);font-size:14px;background:#fff;box-shadow:var(--shadow)}
+.verdict.is-pass{border-left:4px solid var(--rose)}
+.verdict.is-fail{border-left:4px solid var(--muted)}
+.verdict b{color:var(--head)}
+
+/* Поиск */
+.result-level{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--rose)}
+.empty{color:var(--head);opacity:.7;font-size:14px;padding:var(--s3) 0}
+
+.foot{margin-top:var(--s6);text-align:center;font-size:12px;color:var(--head);opacity:.6}
+
+@media (min-width:768px){
+  .app{padding:0 var(--s3) var(--s6)}
+}
